@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+        body{
+            background-color: beige;
+        }
+        .navbar{
+    background-color: rgb(19, 1, 63);
+    color: antiquewhite;
+    padding: 10px;
+    align-items: center;
+    
+}
+.navbar h1{
+    padding-left: 45%;
+}
+.updated{
+    margin-top: 20px;
+    width: 35%;
+    height: 40px;
+    font-size: 20px;
+    
+}
+.btn{
+    height:40px;
+    width: 10%;
+    border-radius: 5px;
+    background-color: rgb(88, 228, 8);
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    
+
+}
+
+.btn2{
+    background-color: red;
+    border-radius: 5px;
+    height: 30px;
+    width: 10%;
+    font-weight: bold;
+    color: beige;
+    border-color: black;
+    margin-bottom: 10px;
+}
+ 
+    #list-container li {
+        background-color: white;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        font-size: 16px;
+    }
+
+    #list-container li button {
+        background-color: red;
+        color: white;
+        border-color: black;
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    .todo{
+        background: linear-gradient(rgb(19, 1, 63),white);
+        font-weight: bold;
+        color:black;
+           
+     }
+
+
+
+</style>
+</head>
+<body >
+    <div class="navbar">
+        <h1>ToDo LIST</h1>
+    </div>
+    <input  class="updated" id="update">
+    <button class="btn" onclick="add()">ADD</button>
+    <ul id="list-container">
+        <li class="todo">ToDo List</li>
+        <button class="btn2" onclick="deleted(event)">delete</button>
+    </ul>
+
+    <script>
+        //select input box
+        //select ul tag
+        var update=document.querySelector("#update")
+        var listcontainer = document.querySelector("#list-container")
+
+        function add()
+        {
+            var listitem=document.createElement("li")
+            listitem.innerHTML=update.value +"<button onclick='deleted(event)'>delete</button>"
+            listcontainer.append(listitem)
+        }
+        
+        function deleted(event)
+        {
+            event.target.parentElement.remove()
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
